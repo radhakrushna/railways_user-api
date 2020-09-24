@@ -8,14 +8,16 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - name: Check out to the master katalonTest repo
+      uses: actions/checkout@v2
+      with:
+        repository: radhakrushna/katalonTest
+        path: katalonTest
+        ref: 'master'
     - name: Checkout
       uses: actions/checkout@v2
     - name: Katalon Studio Github Action
       uses: katalon-studio/katalon-studio-github-action@v2.1
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Katalon Test Github Action
-      uses: radhakrushna/katalonTest
       with:
           version: '7.5.5'
           projectPath: 'D:\a\katalonTest\katalonTest'
