@@ -19,6 +19,6 @@ jobs:
     - name: Katalon Studio Github Action
       uses: katalon-studio/katalon-studio-github-action@v2.1
       with:
-        version: '6.3.3'
+        version: '7.5.5'
         projectPath: 'D:\a\railways_user-api\railways_user-api\katalonTest'
         args: 'katalonc -noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/google" -apiKey= "46d2be95-c15b-4e9a-8f9c-c151920c8e91" --config -webui.autoUpdateDrivers=true'
