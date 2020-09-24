@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Check out to the master katalonTest repo
+      uses: actions/checkout@v2
+      with:
+        repository: hpe-hcss/Agena-test-utils
+        path: Agena-test-utils
+        ref: 'master'
+    - name: Katalon Studio Github Action
+      uses: katalon-studio/katalon-studio-github-action@v2.1
+      with:
+        version: '7.5.5'
+        projectPath: '${{ github.workspace }}\Agena-test-utils\tree\master\tests\modules\katalon\GeminiGLHC'
+        args: 'katalonc -noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/google" -apiKey= ${{ secrets.KATALON_API_KEY }} --config -webui.autoUpdateDrivers=true'
