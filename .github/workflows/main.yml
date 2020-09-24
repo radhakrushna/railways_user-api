@@ -15,7 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Katalon Test Github Action
-      uses: radhakrushna/katalonTest@v2.1
+      uses: radhakrushna/katalonTest
       with:
           version: '7.5.5'
           projectPath: 'D:\a\katalonTest\katalonTest'
