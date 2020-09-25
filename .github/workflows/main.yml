@@ -1,6 +1,6 @@
 name: CI
 on:
-  push:
+  pull:
     branches: [ master ]
   pull_request:
     branches: [ master ]
