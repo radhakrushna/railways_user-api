@@ -9,9 +9,9 @@ fi
 
 
 # Ideally should be set as an environment variable to reuse this script
-SSHUSER=$GL_USER
-SSHPASS=$GL_PASS
-REMOTE_IP=$SEED_IP
+SSHUSER="radha"
+SSHPASS="admin123"
+REMOTE_IP="10.0.2.15"
 
 REMOTE_COMMAND="$*"
 # Clear known_hosts
