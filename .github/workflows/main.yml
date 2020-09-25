@@ -10,5 +10,5 @@ jobs:
     steps:
     - name: Download the required artifacts for CI
       run: |
-        ~/rexec.sh "cd /home/radha/Desktop/actions-runner/;touch rk.txt"
+        ~/rexec.sh "ls"
         echo $?
