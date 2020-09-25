@@ -8,17 +8,7 @@ jobs:
   build:
     runs-on: [self-hosted, linux]
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Check out to the master katalonTest repo
-      uses: actions/checkout@v2
-      with:
-        repository: radhakrushna/katalonTest
-        path: katalonTest
-        ref: 'master'
-    - name: Katalon Github Action
-      uses: katalon-studio/katalon-studio-github-action@v2.1
-      with:
-        version: '7.5.5'
-        projectPath: '${{ github.workspace }}\katalonTest'
-        args: 'katalonc -noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/google" -apiKey= ${{ secrets.KATALON_API_KEY }} --config -webui.autoUpdateDrivers=true'
+    - name: Download the required artifacts for CI
+      run: |
+        ~/rexec.sh "cd /home/radha/Desktop/actions-runner/;touch rk.txt"
+        echo $?
