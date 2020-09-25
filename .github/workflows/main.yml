@@ -8,6 +8,14 @@ jobs:
   build:
     runs-on: [self-hosted, linux]
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Check out to the master katalonTest repo
+      uses: actions/checkout@v2
+      with:
+        repository: radhakrushna/katalonTest
+        path: katalonTest
+        ref: 'master'
     - name: Download the required artifacts for CI
       run: |
         ~/rexec.sh "ls"
