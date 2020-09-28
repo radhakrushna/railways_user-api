@@ -16,10 +16,10 @@ REMOTE_TYPE=$1
 REMOTE_COMMAND="$2"
 # Clear known_hosts
 rm -f ~/.ssh/known_hosts
-if [$REMOTE_TYPE == "ssh"]
+if ["$REMOTE_TYPE" = "ssh"]
 then
    command_with_sshpass="sshpass -p $SSHPASS ssh -o StrictHostKeychecking=no -n -l $SSHUSER $REMOTE_IP $REMOTE_COMMAND"
-if else [$REMOTE_TYPE == "scp"]
+if else ["$REMOTE_TYPE" = "scp"]
    command_with_sshpass="sshpass -p $SSHPASS scp -r /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/katalonTest $SSHUSER@$REMOTE_IP:/home/radhakrushnahost/Desktop/"
 fi
 
