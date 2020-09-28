@@ -21,6 +21,6 @@ jobs:
         cd C:\actions-runner\_work\railways_user-api\railways_user-api
     - name: list the files
       run: |
-        ~/rexec.sh "cd /home/glcgadmin/;touch rk.txt"
+        ~/bash rexec.sh "cd /home/glcgadmin/;touch rk.txt"
         echo $?
         
