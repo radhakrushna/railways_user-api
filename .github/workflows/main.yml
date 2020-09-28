@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, windows]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -18,6 +18,6 @@ jobs:
         ref: 'master'
     - name: Download the required artifacts for CI
       run: |
-        cd /home/radha/Desktop/actions-runner/_work
-        echo "Cleanup existing seednode....."
-        ls
+        ~/rexec.sh "cd /home/radha/Desktop/actions-runner/_work;ls"
+        echo $?
+        
