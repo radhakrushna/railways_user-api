@@ -13,7 +13,7 @@ SSHPASS="host123"
 REMOTE_IP="192.168.100.103"
 REMOTE_TYPE=$1
 
-REMOTE_COMMAND="$*"
+REMOTE_COMMAND="$2"
 # Clear known_hosts
 rm -f ~/.ssh/known_hosts
 command_with_sshpass="sshpass -p $SSHPASS $REMOTE_TYPE -o StrictHostKeychecking=no -n -l $SSHUSER $REMOTE_IP $REMOTE_COMMAND"
