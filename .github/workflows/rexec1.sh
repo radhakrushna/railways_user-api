@@ -11,11 +11,12 @@ fi
 SSHUSER="radhakrushnahost"
 SSHPASS="host123"
 REMOTE_IP="192.168.100.103"
+REMOTE_TYPE=$1
 
 REMOTE_COMMAND="$*"
 # Clear known_hosts
 rm -f ~/.ssh/known_hosts
-command_with_sshpass="sshpass -p $SSHPASS ssh -o StrictHostKeychecking=no -n -l $SSHUSER $REMOTE_IP $REMOTE_COMMAND"
+command_with_sshpass="sshpass -p $SSHPASS $REMOTE_TYPE -o StrictHostKeychecking=no -n -l $SSHUSER $REMOTE_IP $REMOTE_COMMAND"
 echo "$command_with_sshpass"
 tmp_remote_error_file=$(mktemp)
 remote_output="`$command_with_sshpass 2>$tmp_remote_error_file`"
