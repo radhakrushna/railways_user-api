@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: [self-hosted, windows]
+    runs-on: [self-hosted, linux]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -18,9 +18,9 @@ jobs:
         ref: 'master'
     - name : Change the path to railways_user_api
       run: |
-        cd C:\actions-runner\_work\railways_user-api\railways_user-api
+        cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
     - name: list the files
       run: |
-        ~/bash rexec.sh "cd /home/glcgadmin/;touch rk.txt"
+        ~/rexec.sh "cd /home/radhakrushnahost/Desktop/;touch mv.txt"
         echo $?
         
