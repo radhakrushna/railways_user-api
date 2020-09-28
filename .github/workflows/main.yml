@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, windows]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
