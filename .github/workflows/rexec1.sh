@@ -7,25 +7,13 @@ then
    exit -1
 fi
 
-# Ideally should be set as an environment variable to reuse this script
-SSHUSER="radhakrushnahost"
-SSHPASS="host123"
-REMOTE_IP="192.168.100.103"
-REMOTE_TYPE=$1
-
-REMOTE_COMMAND="$2"
+REMOTE_COMMAND="$*"
 # Clear known_hosts
 rm -f ~/.ssh/known_hosts
-if ["$REMOTE_TYPE" == "ssh"]
-then
-   command_with_sshpass="sshpass -p $SSHPASS ssh -o StrictHostKeychecking=no -n -l $SSHUSER $REMOTE_IP $REMOTE_COMMAND"
-if else ["$REMOTE_TYPE" == "scp"]
-   command_with_sshpass="sshpass -p $SSHPASS scp -r /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/katalonTest $SSHUSER@$REMOTE_IP:/home/radhakrushnahost/Desktop/"
-fi
 
-echo "$command_with_sshpass"
+echo "$REMOTE_COMMAND"
 tmp_remote_error_file=$(mktemp)
-remote_output="`$command_with_sshpass 2>$tmp_remote_error_file`"
+remote_output="`$REMOTE_COMMAND 2>$tmp_remote_error_file`"
 remote_return_code=$?
 if [ $remote_return_code != 0 ] #  && $remote_output == "" ]
 then
