@@ -16,7 +16,10 @@ jobs:
         repository: radhakrushna/katalonTest
         path: katalonTest
         ref: 'master'
-    - name: Download the required artifacts for CI
+    - name : Change the path to railways_user_api
+      run: |
+        cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
+    - name: list the files
       run: |
         ~/rexec.sh "ls"
         echo $?
