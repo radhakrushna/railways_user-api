@@ -18,10 +18,9 @@ jobs:
         ref: 'master'
     - name : Change the path to railways_user_api
       run: |
-        cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
+        cd C:\actions-runner\_work\railways_user-api\railways_user-api
     - name: list the files
       run: |
-        chmod +x /home/radha/rexec.sh
         ~/rexec.sh "cd /home/glcgadmin/;touch rk.txt"
         echo $?
         
