@@ -9,9 +9,9 @@ fi
 echo "HI--1"
 
 # Ideally should be set as an environment variable to reuse this script
-SSHUSER="glcgadmin"
-SSHPASS="admin"
-REMOTE_IP="172.22.247.140"
+SSHUSER="radhakrushnahost"
+SSHPASS="host123"
+REMOTE_IP="192.168.100.103"
 
 REMOTE_COMMAND="$*"
 # Clear known_hosts
