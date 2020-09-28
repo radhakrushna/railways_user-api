@@ -21,7 +21,8 @@ jobs:
         cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
     - name: list the files
       run: |
-        ~/rexec1.sh "scp" "cd /home/radhakrushnahost/Desktop/;touch mv.txt"
+        cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/.github/workflows
+        ~/rexec1.sh "scp" "ls"
         ~/rexec1.sh "ssh" "cd /home/radhakrushnahost/Desktop/;touch mv.txt"
         echo $?
         
