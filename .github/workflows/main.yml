@@ -21,6 +21,7 @@ jobs:
         cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
     - name: list the files
       run: |
+        chmod +x /home/radha/rexec.sh
         ~/rexec.sh "ls"
         echo $?
         
