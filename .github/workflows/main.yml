@@ -21,6 +21,7 @@ jobs:
         cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
     - name: list the files
       run: |
+        scp -r /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/katalonTest radhakrushnahost@192.168.100.103://home/radhakrushnahost/Desktop
         ~/rexec1.sh "cd /home/radhakrushnahost/Desktop/;touch mv.txt"
         echo $?
         
