@@ -19,7 +19,7 @@ jobs:
     - name : Change the path to railways_user_api
       run: |
         cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
-    - name: list the files
+    - name: list the files are
       run: |
         ~/rexec1.sh "cd /home/radhakrushnahost/Desktop/;touch mv.txt"
         echo $?
