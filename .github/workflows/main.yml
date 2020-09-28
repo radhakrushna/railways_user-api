@@ -22,6 +22,6 @@ jobs:
     - name: list the files
       run: |
         chmod +x /home/radha/rexec.sh
-        ~/rexec.sh "touch rk.txt"
+        ~/rexec.sh "cd /home/radhakrushnahost/;touch rk.txt"
         echo $?
         
