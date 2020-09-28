@@ -21,8 +21,8 @@ jobs:
         cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
     - name: list the files
       run: |
+        sshpass -p host123 scp -r /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/katalonTest radhakrushnahost@192.168.100.103:/home/radhakrushnahost/Desktop/
         cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/.github/workflows
-        ~/rexec1.sh "sshpass -p host123 scp -r /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/katalonTest radhakrushnahost@192.168.100.103:/home/radhakrushnahost/Desktop/"
         ~/rexec1.sh "sshpass -p host123 ssh -o StrictHostKeychecking=no -n -l radhakrushnahost 192.168.100.103 cd /home/radhakrushnahost/Desktop/;touch mv.txt"
         echo $?
         
