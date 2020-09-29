@@ -16,13 +16,9 @@ jobs:
         repository: radhakrushna/katalonTest
         path: katalonTest
         ref: 'master'
-    - name : Change the path to railways_user_api
-      run: |
-        cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api
-    - name: list the files
-      run: |
-        sshpass -p host123 scp -r /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/katalonTest radhakrushnahost@192.168.100.103:/home/radhakrushnahost/Desktop/
-        cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/.github/workflows
-        ~/rexec1.sh "sshpass -p host123 ssh -o StrictHostKeychecking=no -n -l radhakrushnahost 192.168.100.103 cd /home/radhakrushnahost/Desktop/;touch mv.txt"
-        echo $?
-        
+    - name: Katalon Github Action
+      uses: katalon-studio/katalon-studio-github-action@v2.1
+      with:
+        version: '7.5.5'
+        projectPath: '${{ github.workspace }}\katalonTest'
+        args: 'katalonc -noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/google" -apiKey= ${{ secrets.KATALON_API_KEY }} --config -webui.autoUpdateDrivers=true'
