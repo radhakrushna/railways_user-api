@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Check out to the master katalonTest repos
+    - name: Check out to the master katalonTest repo
       uses: actions/checkout@v2
       with:
         repository: radhakrushna/katalonTest
