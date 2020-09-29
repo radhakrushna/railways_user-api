@@ -16,9 +16,9 @@ jobs:
         repository: radhakrushna/katalonTest
         path: katalonTest
         ref: 'master'
-    - name: Katalon Github Actions
+    - name: Katalon Github Actionss
       uses: katalon-studio/katalon-studio-github-action@v2.1
       with:
-        version: '7.5.5'
+        version: '7.7.0'
         projectPath: '${{ github.workspace }}/katalonTest'
         args: 'katalonc -noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/google" -apiKey= ${{ secrets.KATALON_API_KEY }} --config -webui.autoUpdateDrivers=true'
