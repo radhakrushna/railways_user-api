@@ -23,5 +23,5 @@ jobs:
       run: |
         sshpass -p host123 scp -r /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/katalonTest radhakrushnahost@192.168.100.106:/home/radhakrushnahost/Desktop/
         cd /home/radha/Desktop/actions-runner/_work/railways_user-api/railways_user-api/.github/workflows
-        ~/rexec1.sh "sshpass -p host123 ssh -o StrictHostKeychecking=no -n -l radhakrushnahost 192.168.100.106 cd /home/radhakrushnahost/Desktop/software/Katalon_Studio_Engine_Linux_64-7.7.1;./katalonc -noSplash -retry=0 -browserType=Chrome -statusDelay=15 -projectPath="/home/radhakrushnahost/Desktop/katalonTest/katalonTest.prj" -testSuitePath="Test Suites/google" -apiKey= "46d2be95-c15b-4e9a-8f9c-c151920c8e91" --config -webui.autoUpdateDrivers=true"
+        ~/rexec1.sh "sshpass -p host123 ssh -o StrictHostKeychecking=no -n -l radhakrushnahost 192.168.100.106 'cd /home/radhakrushnahost/Desktop/software/Katalon_Studio_Engine_Linux_64-7.7.1;./katalonc -noSplash -retry=0 -browserType=Chrome -statusDelay=15 -projectPath="/home/radhakrushnahost/Desktop/katalonTest/katalonTest.prj" -testSuitePath="Test Suites/google" -apiKey= "46d2be95-c15b-4e9a-8f9c-c151920c8e91" --config -webui.autoUpdateDrivers=true'"
         echo $?
