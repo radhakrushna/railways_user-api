@@ -16,7 +16,7 @@ jobs:
         repository: radhakrushna/katalonTest
         path: katalonTest
         ref: 'master'
-    - name: Katalon Github Action
+    - name: Katalon Github Actions
       uses: katalon-studio/katalon-studio-github-action@v2.1
       with:
         version: '7.5.5'
