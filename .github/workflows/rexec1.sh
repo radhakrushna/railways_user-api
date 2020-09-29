@@ -7,11 +7,15 @@ then
    exit -1
 fi
 
+SSHUSER="radhakrushnahost"
+SSHPASS="host123"
+REMOTE_IP="192.168.100.90"
+
 REMOTE_COMMAND="$*"
 # Clear known_hosts
 rm -f ~/.ssh/known_hosts
+command_with_sshpass="sshpass -p $SSHPASS ssh -o StrictHostKeychecking=no -n -l $SSHUSER $REMOTE_IP $REMOTE_COMMAND"
 
-echo "$REMOTE_COMMAND"
 tmp_remote_error_file=$(mktemp)
 remote_output="`$REMOTE_COMMAND 2>$tmp_remote_error_file`"
 remote_return_code=$?
